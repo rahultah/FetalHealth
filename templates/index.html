@@ -35,27 +35,27 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="baseline value" placeholder="baseline value" required="required" />
-        <input type="text" name="accelerations" placeholder="accelerations" required="required" />
-		<input type="text" name="fetal_movement" placeholder="fetal_movement" required="required" />
-		<input type="text" name="uterine_contractions" placeholder="uterine_contractions" required="required" />
-		<input type="text" name="light_decelerations" placeholder="light_decelerations" required="required" />
-		<input type="text" name="severe_decelerations" placeholder="severe_decelerations" required="required" />
-		<input type="text" name="prolongued_decelerations,abnormal_short_term_variability" placeholder="prolongued_decelerations,abnormal_short_term_variability" required="required" />
-		<input type="text" name="abnormal_short_term_variability" placeholder="abnormal_short_term_variability" required="required" />
-		<input type="text" name="mean_value_of_short_term_variability" placeholder="mean_value_of_short_term_variability" required="required" />
-		<input type="text" name="percentage_of_time_with_abnormal_long_term_variability" placeholder="percentage_of_time_with_abnormal_long_term_variability" required="required" />
-		<input type="text" name="mean_value_of_long_term_variability" placeholder="mean_value_of_long_term_variability" required="required" />
-		<input type="text" name="histogram_width" placeholder="histogram_width" required="required" />
-		<input type="text" name="histogram_min" placeholder="histogram_min" required="required" />
-		<input type="text" name="histogram_max" placeholder="histogram_max" required="required" />
-		<input type="text" name="histogram_number_of_peaks" placeholder="histogram_number_of_peaks" required="required" />
-		<input type="text" name="histogram_number_of_zeroes" placeholder="histogram_number_of_zeroes" required="required" />
-		<input type="text" name="histogram_mode" placeholder="histogram_mode" required="required" />
-		<input type="text" name="histogram_mean" placeholder="histogram_mean" required="required" />
-		<input type="text" name="histogram_median" placeholder="histogram_median" required="required" />
-		<input type="text" name="histogram_variance" placeholder="histogram_variance" required="required" />
-		<input type="text" name="histogram_tendency" placeholder="histogram_tendency" required="required" />
+    	<input class="form-control"class="form-control" type="text" name="baseline value" placeholder="baseline value" required="required" />
+        <input class="form-control"type="text" name="accelerations" placeholder="accelerations" required="required" />
+		<input class="form-control"type="text" name="fetal_movement" placeholder="fetal_movement" required="required" />
+		<input class="form-control"type="text" name="uterine_contractions" placeholder="uterine_contractions" required="required" />
+		<input class="form-control"type="text" name="light_decelerations" placeholder="light_decelerations" required="required" />
+		<input class="form-control"type="text" name="severe_decelerations" placeholder="severe_decelerations" required="required" />
+		<input class="form-control"type="text" name="prolongued_decelerations,abnormal_short_term_variability" placeholder="prolongued_decelerations,abnormal_short_term_variability" required="required" />
+		<input class="form-control"type="text" name="abnormal_short_term_variability" placeholder="abnormal_short_term_variability" required="required" />
+		<input class="form-control"type="text" name="mean_value_of_short_term_variability" placeholder="mean_value_of_short_term_variability" required="required" />
+		<input class="form-control"type="text" name="percentage_of_time_with_abnormal_long_term_variability" placeholder="percentage_of_time_with_abnormal_long_term_variability" required="required" />
+		<input class="form-control"type="text" name="mean_value_of_long_term_variability" placeholder="mean_value_of_long_term_variability" required="required" />
+		<input class="form-control"type="text" name="histogram_width" placeholder="histogram_width" required="required" />
+		<input class="form-control"type="text" name="histogram_min" placeholder="histogram_min" required="required" />
+		<input class="form-control"type="text" name="histogram_max" placeholder="histogram_max" required="required" />
+		<input class="form-control"type="text" name="histogram_number_of_peaks" placeholder="histogram_number_of_peaks" required="required" />
+		<input class="form-control"type="text" name="histogram_number_of_zeroes" placeholder="histogram_number_of_zeroes" required="required" />
+		<input class="form-control"type="text" name="histogram_mode" placeholder="histogram_mode" required="required" />
+		<input class="form-control"type="text" name="histogram_mean" placeholder="histogram_mean" required="required" />
+		<input class="form-control"type="text" name="histogram_median" placeholder="histogram_median" required="required" />
+		<input class="form-control"type="text" name="histogram_variance" placeholder="histogram_variance" required="required" />
+		<input class="form-control"type="text" name="histogram_tendency" placeholder="histogram_tendency" required="required" />
        
         <button type="submit"  class="btn btn-primary btn-block btn-large">Submit</button>
     </form>
