@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">BabyCare</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a target="_blank" href="https://www.kaggle.com/andrewmvd/fetal-health-classification">Github Repo</a></li>
+            <li><a target="_blank" href="https://www.kaggle.com/andrewmvd/fetal-health-classification">Dataset</a></li>
+            <li><a target="_blank" href="https://www.whattoexpect.com/pregnancy/fetal-development/">More about Fetal Health</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+ <div class="login">
+	<h1>Fetal Health Classification</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="baseline value" placeholder="baseline value" required="required" />
+        <input type="text" name="accelerations" placeholder="accelerations" required="required" />
+		<input type="text" name="fetal_movement" placeholder="fetal_movement" required="required" />
+		<input type="text" name="uterine_contractions" placeholder="uterine_contractions" required="required" />
+		<input type="text" name="light_decelerations" placeholder="light_decelerations" required="required" />
+		<input type="text" name="severe_decelerations" placeholder="severe_decelerations" required="required" />
+		<input type="text" name="prolongued_decelerations,abnormal_short_term_variability" placeholder="prolongued_decelerations,abnormal_short_term_variability" required="required" />
+		<input type="text" name="abnormal_short_term_variability" placeholder="abnormal_short_term_variability" required="required" />
+		<input type="text" name="mean_value_of_short_term_variability" placeholder="mean_value_of_short_term_variability" required="required" />
+		<input type="text" name="percentage_of_time_with_abnormal_long_term_variability" placeholder="percentage_of_time_with_abnormal_long_term_variability" required="required" />
+		<input type="text" name="mean_value_of_long_term_variability" placeholder="mean_value_of_long_term_variability" required="required" />
+		<input type="text" name="histogram_width" placeholder="histogram_width" required="required" />
+		<input type="text" name="histogram_min" placeholder="histogram_min" required="required" />
+		<input type="text" name="histogram_max" placeholder="histogram_max" required="required" />
+		<input type="text" name="histogram_number_of_peaks" placeholder="histogram_number_of_peaks" required="required" />
+		<input type="text" name="histogram_number_of_zeroes" placeholder="histogram_number_of_zeroes" required="required" />
+		<input type="text" name="histogram_mode" placeholder="histogram_mode" required="required" />
+		<input type="text" name="histogram_mean" placeholder="histogram_mean" required="required" />
+		<input type="text" name="histogram_median" placeholder="histogram_median" required="required" />
+		<input type="text" name="histogram_variance" placeholder="histogram_variance" required="required" />
+		<input type="text" name="histogram_tendency" placeholder="histogram_tendency" required="required" />
+       
+        <button type="submit"  class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+
+   <br>
+   <br>
+   <h1 style="visibility:hidden;" id="main_pred">{{ prediction_text }}</h1>
+
+   <!-- <button class="" onclick="detect()">Predict</button> -->
+   <!-- <h2>Modal Example</h2> -->
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary btn-block btn-large" onclick="detect()" data-toggle="modal" data-target="#myModal">Click Me to Predict</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style="color: black;" class="modal-title">Fetal Status</h4>
+        </div>
+        <div class="modal-body">
+            <h1 style="color:black;" id="final_pred"></h1>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+   <script>
+       function detect()
+       {
+        predicted_text = document.getElementById("main_pred").innerHTML
+        changeh = document.getElementById('final_pred')
+        // console.log(predicted_text)
+        if (predicted_text == "3")
+        {
+            changeh.innerHTML  = "The Fetal Detection is Pathalogical"
+        }
+        else if (predicted_text == "2")
+        {
+            changeh.innerHTML = "The Fetal Detection is Suspect"
+        }
+        else
+        {
+            changeh.innerHTML = "The Fetal Detection is Normal"
+
+        }
+       }
+   </script>
+
+
+ </div>
+
+
+</body>
+</html>
