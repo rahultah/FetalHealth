@@ -92,7 +92,35 @@
   </div>
   
 </div>
-   <script>
+<div>
+  <button type="button" class="bton bton-1 btn-block btn-large"  data-toggle="modal" data-target="#myModal2">Click Me to See generalised graphs</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style="color: black;" class="modal-title">Graphs</h4>
+        </div>
+        <div class="modal-body">
+            <!-- <h1 style="color:black;" id="final_pred"></h1> -->
+            <img src="https://resources.ama.uk.com/glowm_www/graphics/figures/v2/0680/001f.gif" alt=""><br><br>
+            <img src="https://www.cdc.gov/nchs/images/databriefs/151-200/db200_fig2.png" height="496" width="550" alt="">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<h3>Note: - After submitting the details click on "Click me to Predict" button to get the prediction</h3>
+   <script> 
        function detect()
        {
         predicted_text = document.getElementById("main_pred").innerHTML
