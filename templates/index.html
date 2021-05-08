@@ -34,7 +34,7 @@
 	<h1>Fetal Health Classification</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('predict')}}"method="post" autocomplete="on">
     	<input class="form-control"class="form-control" type="text" name="baseline value" placeholder="baseline value" required="required" />
         <input class="form-control"type="text" name="accelerations" placeholder="accelerations" required="required" />
 		<input class="form-control"type="text" name="fetal_movement" placeholder="fetal_movement" required="required" />
@@ -96,13 +96,14 @@
        function detect()
        {
         predicted_text = document.getElementById("main_pred").innerHTML
+        console.log(predicted_text)
         changeh = document.getElementById('final_pred')
         // console.log(predicted_text)
-        if (predicted_text == "3")
+        if (predicted_text == "3.0")
         {
             changeh.innerHTML  = "The Fetal Detection is Pathalogical"
         }
-        else if (predicted_text == "2")
+        else if (predicted_text == "2.0")
         {
             changeh.innerHTML = "The Fetal Detection is Suspect"
         }
